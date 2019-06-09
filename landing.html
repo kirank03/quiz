@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Landing Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="landingpage.css">
+
+</head>
+<body>
+	<div class="slideshow-container">
+		<div class="mySlides fade">
+		  <div class="updiv">Learning Points,<br>Ray and Lines</div>
+		  <img src="one.jpg" style="width:100%;height:100%">
+		  <input type="button" value="START NOW" class="btn" onclick="location.href='quiz.html'">
+		  <p>Time<br>30-40 minutes<br><br><br>Tags<br>Maths,Geometry,Shapes,Lines.
+		  <div class="downdiv">You earned a new badge! See your badge collection here</div>
+		  <!--<div class="downdiv">No new Notifications!</div>  
+		  <div class="downdiv">New Notifications comming soon.</div>-->
+		</div>
+
+		<div class="mySlides fade">
+		  <div class="updiv">Learning Points,<br>Ray and Lines</div>
+		  <img src="two.jpg" style="width:100%;height:100%">
+		  <input type="Submit" value="START NOW" class="btn" onclick="location.href='quiz2.html'">
+		  <p>Time<br>30-40 minutes<br><br><br>Tags<br>Maths,Geometry,Shapes,Lines.
+		  <div class="downdiv">You earned a new badge! See your badge collection here</div>
+		</div>
+		
+		<a class="prev" onclick="changeslide(-1)">&#10094;</a>
+		<a class="next" onclick="changeslide(1)">&#10095;</a>	
+		
+	</div>
+	
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function changeslide(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		}
+	</script>
+
+</body>
+</html>

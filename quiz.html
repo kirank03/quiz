@@ -1,0 +1,176 @@
+<html>
+<head>
+	<title>Quiz Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"> </script>
+	<link rel="stylesheet" type="text/css" href="quizpage.css">
+	<style>
+		#closebtn
+		{
+				position: absolute;
+				top:1%;
+				left: 16px;
+				font-size:20px;
+		}
+		#skip
+		{
+			position: absolute;
+			top:1%;
+			right:16px;
+			 transition: 0.6s ease;
+			 cursor:pointer;
+			font-size:20px;
+		}
+		.quesdiv
+		{
+			background-color:#FFFFFF;
+			height:relative;
+			width:60%;
+			position:relative;
+			padding:5% 5% 5% 5%;
+			box-shadow:10px 20px 30px grey;
+			font-size:30px;
+			margin-top:15%;
+			top:20%;
+			left:15%;
+		}
+		.optiona , .optionb ,.optionc,.optiond
+		{
+			background-color:teal;
+			height:relative;
+			width:60%;
+			position:relative;
+			box-shadow:10px 20px 30px grey;
+			padding:5% 5% 5% 5%;
+			font-size:30px;
+			margin-top:2%;
+			top:20%;
+			left:15%;
+		}
+	</style>
+</head>
+<body style="background-color:#D7DBDD;">
+<a href="landing.html"><p id="closebtn">&#10006;</p></a>
+<a id="skip" onclick="changeslide(1)"><p>SKIP</p></a>
+	<div class="slideshow-container">
+		<div class="mySlides fade">
+			<div class="quesdiv" ondrop="drop(event)" ondragover="allowDrop(event)">What is the term for a straight path that is endless in both direction?</div>
+			<div class="optiona"><p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">point</p></div>
+			<div class="optionb"><p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">line</p></div>
+			<div class="optionc"><p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">segment</p></div>
+			<div class="optiond"><p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">ray</p></div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div class="quesdiv">A_______ is a line with a start point but no end point.</div>
+			<div class="optiona">point</div>
+			<div class="optionb">line</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>
+		<div class="mySlides fade">
+			<div class="quesdiv">What is the term for a straight path that is endless in both direction?</div>
+			<div class="optiona">line</div>
+			<div class="optionb">ray</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div class="quesdiv">A part of a line that has two endpoints?</div>
+			<div class="optiona">point</div>
+			<div class="optionb">line</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div class="quesdiv">A __________ is a location in space.</div>
+			<div class="optiona">segment</div>
+			<div class="optionb">ray</div>
+			<div class="optionc">line</div>
+			<div class="optiond">point</div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div class="quesdiv">Any line segment can be formed by joining</div>
+			<div class="optiona">two points</div>
+			<div class="optionb">three points</div>
+			<div class="optionc">four point</div>
+			<div class="optiond">more than three points</div>
+		</div>
+		
+	<!--	<div class="mySlides fade">
+			<div class="quesdiv">What is the term for a straight path that is endless in both direction?</div>
+			<div class="optiona">point</div>
+			<div class="optionb">line</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div class="quesdiv">What is the term for a straight path that is endless in both direction?</div>
+			<div class="optiona">point</div>
+			<div class="optionb">line</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div id="quesdiv">What is the term for a straight path that is endless in both direction?</div>
+			<div class="optiona">point</div>
+			<div class="optionb">line</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>
+		
+		<div class="mySlides fade">
+			<div id="quesdiv">What is the term for a straight path that is endless in both direction?</div>
+			<div class="optiona">point</div>
+			<div class="optionb">line</div>
+			<div class="optionc">segment</div>
+			<div class="optiond">ray</div>
+		</div>-->
+	
+	
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function changeslide(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";  
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		}
+		
+		
+		function dragStart(event) {
+		event.dataTransfer.setData("Text", event.target.id);
+		}
+
+		function allowDrop(event) {
+		  event.preventDefault();
+		}
+
+		function drop(event) {
+		  event.preventDefault();
+		  var data = event.dataTransfer.getData("Text");
+		  event.target.appendChild(document.getElementById(data));
+		}
+	</script>
+</body>
+</html>
